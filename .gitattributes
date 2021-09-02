@@ -1,1 +1,2 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+/Users/ben/Downloads/bkchang-97.github.io/images/ladida.mp4 filter=lfs diff=lfs merge=lfs -text
