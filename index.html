@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Benjamin Chang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel='shortcut icon' href='images/laptop.jpg'/>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div class="topnav">
+			<a class="active" href="#home">Home</a>
+			<a href="#news">News</a>
+			<a href="#contact">Contact</a>
+			<a href="#about">About</a>
+		  </div>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="content">
+							<div class="inner">
+								<h1>Benjamin Chang</h1>
+								<span class="element"></span>
+							</div>
+						</div>
+						<ul class="icons">
+							<li><a href="https://github.com/bkchang-97" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/benkchang/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:benjamin.kn.chang@gmail.com" class="icon far fa-paper-plane"><span class="label">Email</span></a></li>
+							<li><a href="BChang-Resume.pdf" target="_blank" class="icon far fa-file-alt"><span class="label">Resume</span></a></li>
+						</ul>
+						<nav>
+							<ul>
+								<li><a href="#about">About</a></li>
+								<li><a href="#projects">Projects</a></li>
+								<li><a href="#teaching">Teaching</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="about">
+								<h2 class="major">About Me</h2>
+								<span class="image main"><img src="images/music.jpg" /></span>
+								<p>
+									Thanks for taking the time to get to know me! My name is Benjamin, but I also go by Ben and my friends call me 
+									Bang (cuz Ben + Chang = Bang!). I am a computer science student in the BCS program at the University of British 
+									Columbia (Vancouver). I was originally pre-med, totally set on going to medical school and becoming a doctor but
+									because of how much I enjoyed a single computer science elective I took in my final year, I totally changed course and decided to 
+									pursue CS instead. 
+								</p>
+								<p>
+									The girl in the photo is one of my music students. Fun fact about me is that on the weekends, I teach group music
+									classes to children. It is known around the world as the Yamaha Music Program and it offers multiple classes at
+									various levels to give children a well-rounded education in music. I started as an instructor when I was in high 
+									school and have been teaching for almost 10 years now and every year has been better than the last. Read more about my teaching
+									<a href="#teaching">here</a>.
+								</p>
+							</article>
+
+						<!-- Projects -->
+							<article id="projects">
+								<h2 class="major">My Work</h2>
+								<p>These are some examples of the computing related work I have done in my spare time and throughout the school year. I have tried
+									to include a variety to show the diversity of my skills and interests but also the motivations behind the work I pursue.
+								</p>
+								<div id="cs203">
+									<h3>CPSC 203 (UBC)</h3>
+									<p> <img src="images/rabbit.png" align= "right" style="width:40%;height:60%;margin-left:15px;">
+										One of the works I'm most proud of is actually not a personal project/ hackathon/etc. but actually a course I've helped create at 
+										UBC. Assisting instructor Cinda Heeren, I helped develop course content for her programming course CPSC 203: Programming, Problem Solving
+										and Algorithms. In this class we teach CS fundamentals but mix in some fun topics here and there: basic data structures, data science using 
+										Pandas dataframes, graph traversing algorithms, NLP on novels and much more! I have personally created all the lab content for the course as well
+										as a majority of the text/exam questions. In 2021 the course was officially added into UBC's data science minor program!
+									</p>
+								</div>
+							
+								<div id="ppitch">
+									<h3>Perfect Pitch</h3>
+									<p> <img src="images/ppitch.png" style="width:100%;height1000%;margin-left:15px;">
+										My very first personal project and one I still keep up to date with, Perfect Pitch is a music game app I created for my music students during 
+										the pandemic. I was finding it difficult to facilitate the same active learning environment with online teaching and wanted to create something 
+										that my students could use at home in order to reinforce our classroom activities. The app is a audio-based chord guessing game for Android which 
+										I programmed in Kotlin. It is available on the Google Play store and I am still making adjustments to it based on feedback from parents.
+									</p>
+								</div>
+
+								<div id="gol">
+									<h3>Conway's Game of Life</h3>
+									<p> <img src="images/randLife.gif" align= "right" style="width:40%;height:60%;margin-left:15px;">
+										What originally started as a class assignment became something I decided to take further and challenge my skills in Python as much as possible.
+										I have created varying starting boards to initiate some infamous animations: the bullet, the glider, the ship, etc. but I have also created a 
+										variant of the Game of Life in order to model a disease outbreak.
+									</p>
+								</div>
+							</article>
+
+						<!-- Teaching -->
+						<article id="teaching">
+							<style>
+								* {box-sizing: border-box;}
+								body {font-family: Verdana, sans-serif;}
+								.mySlides {display: none;}
+								img {vertical-align: middle;}
+								
+								/* Slideshow container */
+								.slideshow-container {
+									max-width: 1000px;
+  									position: relative;
+  									margin: auto;
+								}
+								
+								/* Caption text */
+								.text {
+								  color: #f2f2f2;
+								  font-size: 15px;
+								  padding: 8px 12px;
+								  position: absolute;
+								  bottom: 8px;
+								  width: 100%;
+								  text-align: center;
+								}
+								
+								/* Number text (1/3 etc) */
+								.numbertext {
+								  color: #f2f2f2;
+								  font-size: 12px;
+								  padding: 8px 12px;
+								  position: absolute;
+								  top: 0;
+								}
+								
+								/* The dots/bullets/indicators */
+								.dot {
+								  height: 15px;
+								  width: 15px;
+								  margin: 0 2px;
+								  background-color: #bbb;
+								  border-radius: 50%;
+								  display: inline-block;
+								  transition: background-color 0.6s ease;
+								}
+								
+								.active {
+								  background-color: #717171;
+								}
+								
+								/* Fading animation */
+								.fade {
+								  -webkit-animation-name: fade;
+								  -webkit-animation-duration: 1.5s;
+								  animation-name: fade;
+								  animation-duration: 1.5s;
+								}
+								
+								@-webkit-keyframes fade {
+								  from {opacity: .4} 
+								  to {opacity: 1}
+								}
+								
+								@keyframes fade {
+								  from {opacity: .4} 
+								  to {opacity: 1}
+								}
+								
+								/* On smaller screens, decrease text size */
+								@media only screen and (max-width: 300px) {
+								  .text {font-size: 11px}
+								}
+								</style>
+							<h2 class="major">Teaching</h2>
+							<div class="slideshow-container">
+								<style>
+									img {
+										display: block;
+										margin-left: auto;
+										margin-right: auto;
+								  	}
+								</style>
+								<div class="mySlides fade">
+								  <div class="numbertext">1 / 6</div>
+								  <img src="images/music1.jpg" style="width:50%; height: 50%; text-align: center;">
+								</div>
+								
+								<div class="mySlides fade">
+								  <div class="numbertext">2 / 6</div>
+								  <img src="images/music2.jpg" style="width:50%; height: 50%; text-align: center;">
+								</div>
+								
+								<div class="mySlides fade">
+								  <div class="numbertext">3 / 6</div>
+								  <img src="images/music3.jpg" style="width:50%; height: 50%; text-align: center;">
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">4 / 6</div>
+									<img src="images/music4.jpg" style="width:50%; height: 50%; text-align: center;">
+								  </div>
+								  
+								  <div class="mySlides fade">
+									<div class="numbertext">5 / 6</div>
+									<img src="images/music5.jpg" style="width:50%; height: 50%; text-align: center;">
+								  </div>
+								  
+								  <div class="mySlides fade">
+									<div class="numbertext">6 / 6</div>
+									<img src="images/music6.jpg" style="width:50%; height: 50%; text-align: center;">
+								  </div>
+							</div>
+								<br>
+								
+								<div style="text-align:center">
+								  <span class="dot"></span> 
+								  <span class="dot"></span> 
+								  <span class="dot"></span> 
+								  <span class="dot"></span> 
+								  <span class="dot"></span> 
+								  <span class="dot"></span> 
+								</div>
+								<script>
+									var slideIndex = 0;
+									showSlides();
+									
+									function showSlides() {
+									  var i;
+									  var slides = document.getElementsByClassName("mySlides");
+									  var dots = document.getElementsByClassName("dot");
+									  for (i = 0; i < slides.length; i++) {
+										slides[i].style.display = "none";  
+									  }
+									  slideIndex++;
+									  if (slideIndex > slides.length) {slideIndex = 1}    
+									  for (i = 0; i < dots.length; i++) {
+										dots[i].className = dots[i].className.replace(" active", "");
+									  }
+									  slides[slideIndex-1].style.display = "block";  
+									  dots[slideIndex-1].className += " active";
+									  setTimeout(showSlides, 2000); // Change image every 2 seconds
+									}
+									</script>
+							<p>The Yamaha Music program offers classes to children starting as early as 2 years old. Having taught for several years now, I actually specialize
+								in the early-age classes, inspiring/motivating and getting kids interested and enjoying music. We do all kinds of activities from singing songs,
+								dancing to music, playing on the keyboard and music theory activties. The entire purpose of the program is for children to develop their vocals, 
+								learn to play the piano, develop their musical senses but most importantly: learn to enjoy music!
+							</p>
+
+							<p>
+								Below is an example of one of my class activites, this is an older class who are in their third year with me. We are singing a upbeat cheerful song
+								while dancing with actions I choreographed. Please enjoy:
+							</p>
+
+							<video style="width: 100%; height: 100%; text-align: center;" controls>
+								<source src="images/ladida.mp4">
+							</video>
+						</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Benjamin Chang. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/typed.js"></script>
+
+	</body>
+</html>
