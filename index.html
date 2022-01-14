@@ -46,6 +46,7 @@
 
 						<!-- Intro -->
 							<article id="about">
+								
 								<h2 class="major">About Me</h2>
 								<span class="image main"><img src="images/music.jpg" /></span>
 								<p>
@@ -66,39 +67,383 @@
 
 						<!-- Projects -->
 							<article id="projects">
-								<h2 class="major">My Work</h2>
-								<p>These are some examples of the computing related work I have done in my spare time and throughout the school year. I have tried
-									to include a variety to show the diversity of my skills and interests but also the motivations behind the work I pursue.
-								</p>
-								<div id="cs203">
-									<h3>CPSC 203 (UBC) <a href="https://github.com/bkchang-97/cpsc_203_PL" style="color:#148af8;">(Link)</a></h3>
-									<p> <img src="images/rabbit.png" align= "right" style="width:40%;height:60%;margin-left:15px;">
-										One of the works I'm most proud of is actually not a personal project/ hackathon/etc. but actually a course I've helped create at 
-										UBC. Assisting instructor Cinda Heeren, I helped develop course content for her programming course CPSC 203: Programming, Problem Solving
-										and Algorithms. In this class we teach CS fundamentals but mix in some fun topics here and there: basic data structures, data science using 
-										Pandas dataframes, graph traversing algorithms, NLP on novels and much more! I have personally created all the lab content for the course as well
-										as a majority of the text/exam questions. In 2021 the course was officially added into UBC's data science minor program!
-									</p>
-								</div>
-							
-								<div id="ppitch">
-									<h3>Perfect Pitch</h3>
-									<p> <img src="images/ppitch.png" style="width:100%;height1000%;margin-left:15px;">
-										My very first personal project and one I still keep up to date with, Perfect Pitch is a music game app I created for my music students during 
-										the pandemic. I was finding it difficult to facilitate the same active learning environment with online teaching and wanted to create something 
-										that my students could use at home in order to reinforce our classroom activities. The app is a audio-based chord guessing game for Android which 
-										I programmed in Kotlin. It is available on the Google Play store and I am still making adjustments to it based on feedback from parents.
-									</p>
-								</div>
+								<style>
+									h2{
+										font-size: 1.5rem;
+										width: max-content;
+										border-bottom: solid 1px white;
+										padding-bottom: 0.5rem;
+										margin: 0 0 2rem 0;
+										line-height: 1.4;
+										letter-spacing: 0.5rem;
+										font-weight: 600;
+										text-transform: uppercase;
+									}
+									.process-wrapper {
+										margin:auto;
+										max-width:1080px;
+									}
+									
+									#progress-bar-container {
+										position:relative;
+										width:100%;
+										margin:auto;
+										height:100px;
+										margin-top:65px;
+									}
+									
+									#progress-bar-container ul {
+										padding:0;
+										margin:0;
+										padding-top:15px;
+										z-index:9999;
+										position:absolute;
+										width:100%;
+										margin-top:-40px
+									}
+									
+									#progress-bar-container li:before {
+										content:" ";
+										display:block;
+										margin:auto;
+										width:30px;
+										height:30px;
+										border-radius:50%;
+										border:solid 2px #aaa;
+										transition:all ease 0.3s;
+										 
+									}
+									
+									#progress-bar-container li.active:before, #progress-bar-container li:hover:before {
+										border:solid 1px white;
+												
+										background: linear-gradient(to right, #207893 0%,#fff 100%); 
+									}
+									
+									#progress-bar-container li {
+										list-style:none;
+										float:left;
+										width:16%;
+										text-align:center;
+										color:#aaa;
+										text-transform:uppercase;
+										font-size:11px;
+										cursor:pointer;
+										font-weight:700;
+										transition:all ease 0.2s;
+										vertical-align:bottom;
+										height:60px;
+										position:relative;
+									}
+									
+									#progress-bar-container li .step-inner {
+										position:absolute;
+										width:100%;
+										bottom:0;
+										font-size: 12px;
+									}
+									
+									#progress-bar-container li.active, #progress-bar-container li:hover {
+										color:white;
+									}
+									
+									#progress-bar-container li:after {
+										content:" ";
+										display:block;
+										width:6px;
+										height:6px;
+										background:#777;
+										margin:auto;
+										border:solid 7px #fff;
+										border-radius:50%;
+										margin-top:40px;
+										box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
+										transition:all ease 0.2s;
+										 
+									}
+									
+									#progress-bar-container li:hover:after {
+										background:#555;
+									}
+									
+									#progress-bar-container li.active:after {
+										background:#207893;
+									}
+									
+									#progress-bar-container #line {
+										width:81%;
+										margin:auto;
+										background: #eee;
+										height:6px;
+										position:absolute;
+										left:8%;
+										top:57px;
+										z-index:1;
+										border-radius:50px;
+										transition:all ease 0.9s;
+									}
+									
+									#progress-bar-container #line-progress {
+										content:" ";
+										width:3%;
+										height:100%;
+										background: #207893;	 
+										background: linear-gradient(to right, #207893 0%,#2ea3b7 100%); 
+										position:absolute;
+										z-index:2;
+										border-radius:50px;
+										transition:all ease 0.9s;
+									}
+									
+									#progress-content-section {
+										width:90%;
+										margin: auto;
+										background: #f3f3f3;
+										border-radius: 4px;
+									}
+									
+									#progress-content-section .section-content {
+										padding:30px 40px;
+										text-align:left;
+									}
+									
+									#progress-content-section .section-content h2 {
+										font-size:17px;
+										text-transform:uppercase;
+										color:white;
+										letter-spacing:1px;
+									}
+									
+									#progress-content-section .section-content p {
+										font-size:16px;
+										line-height:1.8em;
+										color: white;
+									}
+									
+									#progress-content-section .section-content {
+										display:none;
+										animation: FadeInUp 700ms ease 1;
+										animation-fill-mode:forwards;
+										transform:translateY(15px);
+										opacity:0;
+									}
+									
+									#progress-content-section .section-content.active {
+										display:block;
+										background-color: #1b1f22;
+									}
+									
+									@keyframes FadeInUp {
+										0% {
+											transform:translateY(15px);
+											opacity:0;
+										}
+										
+										100% {
+											transform:translateY(0px);
+											opacity:1;
+										}
+									}
+									
+									 
+										</style>
+								<h2>Projects</h2>
+								<br>
+								<div class="process-wrapper">
+									<div id="progress-bar-container">
+										<ul>
+											<li class="step step01 active"><div class="step-inner">Oct 2019</div></li>
+											<li class="step step02"><div class="step-inner">Jul 2020</div></li>
+											<li class="step step03"><div class="step-inner">Nov 2020 </div></li>
+											<li class="step step04"><div class="step-inner">May 2021</div></li>
+											<li class="step step05"><div class="step-inner">Jul 2021</div></li>
+											<li class="step step06"><div class="step-inner">Dec 2021</div></li>
+										</ul>
+										
+										<div id="line">
+											<div id="line-progress"></div>
+										</div>
+									</div>
+									
+									<div id="progress-content-section">
+										<div class="section-content project1 active">
+											<h2>Conway's Game of Life</h2>
+											<p>
+												Recreated the zero-player game modelling a cellular automaton known as Conway's Game of Life, with various starting boards and evolution strategies
+												to create different effects and animations. Also created a custom version with different game rules and evolution strategies in order to model a disease outbreak.
+												
+												<br><br>
+												 <a href="https://github.com/bkchang-97/GOL" target="_blank">Link Here</a>
+												<div style="display: flex; flex-direction: row;">
+													<div>
+														<b class="tech-list-title">Technologies Used</b>
+														<ul class="tech-list">
+															<li>Python</li>
+															<li>numpy</li>
+															<li>pygame</li>
+														</ul>
+													</div>
+													<img src="images/gol.gif" width= "200" height="160">
+												<!-- <img src="images/gol.gif" width="170" height="130"> -->
+												</div>
+											</p>
+										</div>
+										<div class="section-content project2">
+											<h2>Perfect Pitch</h2>
+											<p>
+												Due to the COVID-19 remote learning situation, I was having difficulty getting the same level of engagement from my music students online. I created this mobile
+												game app for Android in order to reinforce some learning that was lost in Zoom rooms. It is an audio-based chord guessing game designed to help students gain
+												a better sense of harmony and develop their perfect pitch. My app is available for download on the Google Play Store and my students are using it weekly.
+												
+												<br><br>
+												 <a href="https://github.com/bkchang-97/ppitch" target="_blank">Link Here</a>
+												<div style="display: flex; flex-direction: row;">
+													<div>
+														<b class="tech-list-title">Technologies Used</b>
+														<ul class="tech-list">
+															<li>Android Studio</li>
+															<li>Kotlin</li>
+														</ul>
+													</div>
+													<img src="images/ppitch.png" style="max-width: 55%; max-height: 55%;">
+												</div>
+											</p>
+										</div>
+										
+										<div class="section-content project3">
+											<h2>BCS Degree Checker</h2>
+											<p>
+												Created a Java application where user can add their courses in-progress or completed and run degree promotion and graduation checks specific to UBC's 
+												BCS (Bachelor of Computer Science) degree. Added a data persistence feature where a user can save/load the application as with JSON data to/from file. 
+												Project written in Java, tested using JUnit with a functioning GUI.
+												
+												<br><br>
+												 <a href="https://github.com/bkchang-97/bcs_checker" target="_blank">Link Here</a>
+												<div style="display: flex; flex-direction: row;">
+													<div>
+														<b class="tech-list-title">Technologies Used</b>
+														<ul class="tech-list">
+															<li>Java</li>
+															<li>JUnit</li>
+															<li>Swing</li>
+														</ul>
+													</div>
+													<img src="images/bcs_checker.gif" style="max-width: 50%; max-height: 50%;">
+												</div>
+											</p>
+										</div>
+										
+										<div class="section-content project4">
+											<h2>Gym 18</h2>
+											<p>
+												Designed and implemented a database system to model the inner workings of a fitness gym. Created a Java application providing access to a custom databased
+												(hosted on UBC servers) with multiple functions through the GUI: registering accounts, booking trainer sessions, creating/following diet plans, etc. Allowed
+												for different user types with varying levels of accessibility and functionality: master account, gym user, gym trainer.
+												
+												<br><br>
+												 <a href="https://github.com/bkchang-97/Gym-18-CPSC304-" target="_blank">Link Here</a>
+												<div style="display: flex; flex-direction: row;">
+													<div>
+														<b class="tech-list-title">Technologies Used</b>
+														<ul class="tech-list">
+															<li>Java</li>
+															<li>Oracle</li>
+															<li>Swing</li>
+														</ul>
+													</div>
+													<img src="images/gym.png" style="max-width: 50%; max-height: 50%;">
+												</div>
+											</p>
+										</div>
+										
+										<div class="section-content project5">
+											<h2>Mood Calendar</h2>
+											<p>
+												A pandemic-inspired project, an iOS app to allow a user to track their mood/mental health throughout the week. Each day the user ranks their mood out of 5, which is recorded and then displayed
+												in a custom week-view. The data is reset every Sunday for the new week.
+											   
+												<br><br>
+												 <a href="https://github.com/bkchang-97/moodCalendar" target="_blank">Link Here</a>
+											   <div style="display: flex; flex-direction: row;">
+												   <div>
+													   <b class="tech-list-title">Technologies Used</b>
+													   <ul class="tech-list">
+														   <li>xCode</li>
+														   <li>Swift</li>
+														   <li>SwiftUI</li>
+													   </ul>
+												   </div>
+												   <img src="images/moodCal.gif" style="max-width: 35%; max-height: 35%;">
+											   </div>
+										   </p>										</div>
+										
+										<div class="section-content project6">
+											<h2>League Champ Predictor</h2>
+											<p>
+												 A classification model to predict which League of Legends champion to play that has the highest chance of victory. Predicting features based on player's position,
+												 teammates selections and enemy team. Created a GUI for easier use of application while League client is running. Created a workflow to fetch match history data, clean and 
+												 format data, build model, tune for hyperparameters and deploy. Prediction accuracy ~20% BUT winrate with predicted champions ~90%. 
+												
+												 <br><br>
+												 <a href="https://github.com/bkchang-97/leagueStats" target="_blank">Link Here</a>
+												<div style="display: flex; flex-direction: row;">
+													<div>
+														<b class="tech-list-title">Technologies Used</b>
+														<ul class="tech-list">
+															<li>Python</li>
+															<li>RiotAPI</li>
+															<li>pandas</li>
+															<li>scikit-learn</li>
+															<li>tkinter</li>
+														</ul>
+													</div>
+													<img src="images/champ-select.png" style="max-width: 60%; max-height: 60%;">
+												</div>
+											</p>
+										</div>
+										</div>
+									</div>
+									<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+									<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+									 <script>
+										
+										$(".step").click( function() {
+										$(this).addClass("active").prevAll().addClass("active");
+										$(this).nextAll().removeClass("active");
+									});
+									
+									$(".step01").click( function() {
+										$("#line-progress").css("width", "0%");
+										$(".project1").addClass("active").siblings().removeClass("active");
+									});
+									
+									$(".step02").click( function() {
+										$("#line-progress").css("width", "21%");
+										$(".project2").addClass("active").siblings().removeClass("active");
+									});
+									
+									$(".step03").click( function() {
+										$("#line-progress").css("width", "40%");
+										$(".project3").addClass("active").siblings().removeClass("active");
+									});
+									
+									$(".step04").click( function() {
+										$("#line-progress").css("width", "60%");
+										$(".project4").addClass("active").siblings().removeClass("active");
+									});
+									
+									$(".step05").click( function() {
+										$("#line-progress").css("width", "80%");
+										$(".project5").addClass("active").siblings().removeClass("active");
+									});
 
-								<div id="gol">
-									<h3>Conway's Game of Life <a href="https://github.com/bkchang-97/GOL" style="color:#148af8;">(Link)</a></h3>
-									<p> <img src="images/gol.png" align= "right" style="width:40%;height:60%;margin-left:15px;">
-										What originally started as a class assignment became something I decided to take further and challenge my skills in Python as much as possible.
-										I have created varying starting boards to initiate some infamous animations: the bullet, the glider, the ship, etc. but I have also created a 
-										variant of the Game of Life in order to model a disease outbreak.
-									</p>
-								</div>
+									$(".step06").click( function() {
+										$("#line-progress").css("width", "100%");
+										$(".project6").addClass("active").siblings().removeClass("active");
+									});
+									
+									 
+										</script>
 							</article>
 
 						<!-- Teaching -->
@@ -147,9 +492,9 @@
 								  transition: background-color 0.6s ease;
 								}
 								
-								.active {
+								/* .active {
 								  background-color: #717171;
-								}
+								} */
 								
 								/* Fading animation */
 								.fade {
